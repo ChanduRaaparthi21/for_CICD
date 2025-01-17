@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04 # Explicitly specifying Ubuntu 22.04 to avoid future changes
 
     steps:
       - name: Checkout code
@@ -16,8 +16,8 @@ jobs:
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin' # Use Temurin JDK distribution
-          java-version: '17'      # Specify Java version 17
+          distribution: 'temurin'
+          java-version: '17'
 
       - name: Cache Maven dependencies
         uses: actions/cache@v3
